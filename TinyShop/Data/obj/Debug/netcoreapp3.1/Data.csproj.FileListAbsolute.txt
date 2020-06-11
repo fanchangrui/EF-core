@@ -1,0 +1,12 @@
+D:\TinyShop\Data\bin\Debug\netcoreapp3.1\Data.deps.json
+D:\TinyShop\Data\bin\Debug\netcoreapp3.1\Data.dll
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.csprojAssemblyReference.cache
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfoInputs.cache
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.AssemblyInfo.cs
+D:\TinyShop\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.json
+D:\TinyShop\Data\bin\Debug\netcoreapp3.1\Data.runtimeconfig.dev.json
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.genruntimeconfig.cache
+D:\TinyShop\Data\bin\Debug\netcoreapp3.1\Data.pdb
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.csproj.CoreCompileInputs.cache
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.dll
+D:\TinyShop\Data\obj\Debug\netcoreapp3.1\Data.pdb

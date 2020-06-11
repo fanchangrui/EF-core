@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>添加产品</title>
+    <meta charset="UTF-8" />
+    <!-- import CSS -->
+    <link href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+          rel="stylesheet" />
+</head>
+<body style="margin: 0;">
+    <el-container id="app">
+        <el-main>
+            <el-row>
+                <el-col>
+                    <el-form :model="product"
+                             label-width="auto"
+                             ref="form">
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="产品序号">
+                                    <el-input placeholder="请输入产品序号"
+                                              v-model="product.productNumber">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="产品名称">
+                                    <el-input placeholder="请输入产品名称"
+                                              v-model="product.productName">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="产品类型">
+                                    <el-radio-group v-model="product.productType">
+                                        <el-radio label="电器"></el-radio>
+                                        <el-radio label="数码"></el-radio>
+                                        <el-radio label="食品"></el-radio>
+                                    </el-radio-group>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col>
+                                <el-form-item label="价格">
+                                    <el-input placeholder="请输入价格"
+                                              v-model="product.price">
+                                    </el-input>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                        <el-row>
+                            <el-col style="text-align: center;">
+                                <el-form-item>
+                                    <el-button type="primary"
+                                               v-on:click="onAddButtonClick">
+                                        添加
+                                    </el-button>
+                                    <el-button>取消</el-button>
+                                </el-form-item>
+                            </el-col>
+                        </el-row>
+                    </el-form>
+                </el-col>
+            </el-row>
+        </el-main>
+    </el-container>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            product: {
+                productNumber: '',
+                productName: '',
+                productType: '电器',
+                price: ''
+            }
+        },
+        methods: {
+            async onAddButtonClick() {
+                const response = await axios.post('/Product/Create', this.product);
+
+                if (response.data.code === 'success') {
+                    this.$message({
+                        message: '记录插入成功',
+                        type: 'success'
+                    });
+                } else {
+                    this.$message({
+                        message: '记录插入失败',
+                        type: 'error'
+                    });
+                }
+            }
+        }
+    });
+    </script>
+</body>
+
+</html>
